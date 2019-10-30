@@ -1,10 +1,12 @@
 import React from 'react';
-import { StyledNav } from './NavStyles';
+import { StyledNav, StyledHeader, StyledLink } from './NavStyles';
 
 function Nav() {
   return (
     <StyledNav>
-      <p>hi</p>
+      <StyledHeader>
+        <h1>Linus</h1>
+      </StyledHeader>
     </StyledNav>
   );
 }
