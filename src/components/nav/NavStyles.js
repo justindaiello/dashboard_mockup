@@ -17,12 +17,24 @@ const StyledHeader = styled.div`
   margin-top: 2rem;
   margin-bottom: 2rem;
 
-  h1 {
+  .nav-heading {
     color: ${props => props.theme.white};
     font-size: 1.8rem;
     text-align: center;
     font-weight: 400;
     margin: 0;
+  }
+
+  .toggler {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: ${props => props.theme.white};
+    font-size: 2rem;
+    padding-left: 0.5rem;
+    svg {
+      margin-top: 0.9rem;
+    }
   }
 `;
 
