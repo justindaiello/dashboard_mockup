@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyledDropdown } from './DropdownStyles';
-import { MdKeyboardArrowDown } from 'react-icons/md';
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 
 function Dropdown() {
+  const [menuActive, setMenuActive] = useState(false); // open and close state for dropdown menu
+
+  // click handler to toggle the menu open
+  function toggleMenu() {
+    setMenuActive(!menuActive);
+  }
+
   return (
-    <StyledDropdown>
+    <StyledDropdown onClick={toggleMenu}>
       Placeholder
-      <MdKeyboardArrowDown className="down-arrow" />
+      {menuActive ? (
+        <MdKeyboardArrowUp className="arrow" />
+      ) : (
+        <MdKeyboardArrowDown className="arrow" />
+      )}
     </StyledDropdown>
   );
 }

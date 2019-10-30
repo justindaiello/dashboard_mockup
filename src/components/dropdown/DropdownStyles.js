@@ -15,7 +15,7 @@ const StyledDropdown = styled.button`
   margin-bottom: 1rem;
   transition: all 0.5s;
 
-  .down-arrow {
+  .arrow {
     font-size: 2rem;
     margin-left: 1rem;
   }
