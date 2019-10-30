@@ -73,7 +73,7 @@ const StyledLink = styled.a`
   }
   &:after {
     height: 2px;
-    background: rgb(251, 252, 253);
+    background: ${props => props.theme.white};
     content: '';
     width: 0;
     position: absolute;
@@ -82,9 +82,6 @@ const StyledLink = styled.a`
     transition-timing-function: cubic-bezier(1, -0.65, 0, 2.31);
     left: 35%;
     margin-top: 2rem;
-    @media (max-width: 700px) {
-      background: none;
-    }
   }
   &:hover,
   &:focus {
