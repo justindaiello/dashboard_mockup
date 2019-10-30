@@ -23,7 +23,7 @@ const StyledBreadcrumb = styled.div`
     align-items: center;
     text-decoration: none;
     cursor: pointer;
-    color: rgb(76, 120, 206);
+    color: ${props => props.theme.darkBlue};
   }
 `;
 
