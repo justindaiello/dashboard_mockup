@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledNav = styled.nav`
-  width: 200px;
+  ${props => (props.open ? `width: 200px` : `width: 50px`)}
   transition: all 0.5s;
   background-color: ${props => props.theme.green};
   display: flex;

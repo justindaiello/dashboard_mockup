@@ -10,9 +10,9 @@ function Nav() {
   }
 
   return (
-    <StyledNav>
+    <StyledNav open={menuActive}>
       <StyledHeader>
-        <h1 className="nav-heading">Linus</h1>
+        {menuActive && <h1 className="nav-heading">Linus</h1>}
         <button className="toggler" onClick={toggleMenu}>
           {menuActive ? <MdKeyboardArrowLeft /> : <MdKeyboardArrowRight />}
         </button>
