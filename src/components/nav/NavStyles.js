@@ -47,6 +47,7 @@ const StyledHeader = styled.div`
     color: ${props => props.theme.white};
     font-size: 2rem;
     padding-left: 0.5rem;
+    }
     svg {
       margin-top: 0.9rem;
     }
@@ -61,6 +62,37 @@ const StyledLink = styled.a`
   display: flex;
   align-items: center;
   position: relative;
+  &:before {
+    content: '';
+    width: 2px;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+  &:after {
+    height: 2px;
+    background: rgb(251, 252, 253);
+    content: '';
+    width: 0;
+    position: absolute;
+    transform: translateX(-50%);
+    transition: width 0.4s;
+    transition-timing-function: cubic-bezier(1, -0.65, 0, 2.31);
+    left: 35%;
+    margin-top: 2rem;
+    @media (max-width: 700px) {
+      background: none;
+    }
+  }
+  &:hover,
+  &:focus {
+    outline: none;
+    &:after {
+      width: calc(100% - 60px);
+    }
+  }
   span {
     padding-right: 2rem;
   }
