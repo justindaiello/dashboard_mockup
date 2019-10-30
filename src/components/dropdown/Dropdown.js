@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
-import { StyledDropdown, DropdownMenu, Pointer } from './DropdownStyles';
+import {
+  StyledDropdown,
+  DropdownMenu,
+  Pointer,
+  DropdownMenuItem,
+} from './DropdownStyles';
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 
-function Dropdown() {
+function Dropdown(props) {
   const [menuActive, setMenuActive] = useState(false); // open and close state for dropdown menu
 
   // click handler to toggle the menu open
@@ -13,7 +18,7 @@ function Dropdown() {
   return (
     <>
       <StyledDropdown onClick={toggleMenu}>
-        Placeholder
+        {props.title}
         {menuActive ? (
           <MdKeyboardArrowUp className="arrow" />
         ) : (
@@ -24,7 +29,16 @@ function Dropdown() {
         <>
           <Pointer />
           <DropdownMenu>
-            <p>MENU!!!</p>
+            <ul className="menu-list">
+              {props.menuItems.map(item => (
+                <DropdownMenuItem key={item.title}>
+                  <a href="#" rel="noopener" className="menu-link">
+                    {item.title}
+                    <span className="menu-icon">{item.icon}</span>
+                  </a>
+                </DropdownMenuItem>
+              ))}
+            </ul>
           </DropdownMenu>
         </>
       )}

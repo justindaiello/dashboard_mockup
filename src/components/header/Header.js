@@ -1,7 +1,12 @@
 import React from 'react';
 import { StyledHeader, StyledNav } from './HeaderStyles';
 import Dropdown from '../dropdown/Dropdown';
-import { MdNotificationsNone } from 'react-icons/md';
+import { MdNotificationsNone, MdHistory, MdAttachMoney } from 'react-icons/md';
+
+const menuItems = [
+  { title: 'Transaction History', icon: <MdHistory /> },
+  { title: 'Current Balance', icon: <MdAttachMoney /> },
+];
 
 function Header() {
   return (
@@ -10,7 +15,7 @@ function Header() {
         <h1 className="heading">Settings</h1>
         <StyledNav>
           <li>
-            <Dropdown />
+            <Dropdown title="Manage Assets" menuItems={menuItems} />
           </li>
           <li>
             <div className="icon-container">
