@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyledPaper, StyledSection } from './PaperStyles';
 import { TiInfoLarge } from 'react-icons/ti';
+import Switch from '../switch/Switch';
+import Menu from '../menu/Menu';
 
 function Paper(props) {
   return (
@@ -12,7 +14,10 @@ function Paper(props) {
             {props.subTop}{' '}
             {props.toolTipTop && <TiInfoLarge className="tooltip" />}
           </h4>
-          <div className="button-container">Button</div>
+          <div className="button-container">
+            {props.menu && <Menu items={props.topMenuItems} />}
+            {props.switch && <Switch />}
+          </div>
         </div>
         <p className="info-block">{props.contentTop}</p>
       </StyledSection>
@@ -23,7 +28,10 @@ function Paper(props) {
             {props.subBottom}{' '}
             {props.toolTipBottom && <TiInfoLarge className="tooltip" />}
           </h4>
-          <div className="button-container">button</div>
+          <div className="button-container">
+            {props.menu && <Menu items={props.bottomMenuItems} bottom />}
+            {props.switch && <Switch />}
+          </div>
         </div>
         <p className="info-block">{props.contentBottom}</p>
       </StyledSection>

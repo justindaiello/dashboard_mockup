@@ -19,8 +19,12 @@ function Main() {
             contentBottom={item.contentBottom}
             hr={item.hr}
             key={item.heading}
+            switch={item.switch}
             toolTipTop={item.toolTipTop}
             toolTipBottom={item.toolTipBottom}
+            menu={item.menu}
+            topMenuItems={item.topMenuItems}
+            bottomMenuItems={item.bottomMenuItems}
           />
         ))}
       </StyledSection>
@@ -41,6 +45,9 @@ const data = [
       'This is the methodology in which your tax and accounting documentation will be prepared.',
     hr: true,
     toolTipBottom: true,
+    menu: true,
+    topMenuItems: ['USD', 'CAD'],
+    bottomMenuItems: ['FIFO', 'LIFO'],
   },
   {
     heading: 'Notification Settings',
@@ -49,6 +56,7 @@ const data = [
     subBottom: 'Email Notifications',
     contentBottom: 'Your email and phone number will not be searchable.',
     hr: true,
+    switch: true,
   },
   {
     heading: 'Privacy Settings',
@@ -61,5 +69,6 @@ const data = [
     hr: true,
     toolTipTop: true,
     toolTipBottom: true,
+    switch: true,
   },
 ];
