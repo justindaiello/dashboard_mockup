@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const StyledNav = styled.nav`
+  /* navigation width when nav is open and closed */
   ${props => (props.open ? `width: 200px` : `width: 50px`)}
   transition: all 0.5s;
   background-color: ${props => props.theme.green};
@@ -8,6 +9,20 @@ const StyledNav = styled.nav`
   flex-direction: column;
   box-shadow: ${props => props.theme.boxShadow};
   height: 100vh;
+
+  /* icon padding when nav is open and closed */
+  .navigation {
+    ${props => (props.open ? `padding-left: 30px` : `padding-left: 15px`)};
+    list-style-type: none;
+    transition: all 0.5s;
+  }
+
+  li {
+    margin-bottom: 1.2rem;
+    :last-child {
+      margin-bottom: 10rem;
+    }
+  }
 `;
 
 const StyledHeader = styled.div`
