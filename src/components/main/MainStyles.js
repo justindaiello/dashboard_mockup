@@ -8,4 +8,11 @@ const StyledMain = styled.main`
   position: relative;
 `;
 
-export { StyledMain };
+const StyledSection = styled.section`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  margin: 2.5rem;
+`;
+
+export { StyledMain, StyledSection };
