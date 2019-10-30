@@ -1,10 +1,11 @@
 import React from 'react';
 import { StyledMain } from './MainStyles';
+import Header from '../header/Header';
 
 function Main() {
   return (
     <StyledMain>
-      <p>hi</p>
+      <Header />
     </StyledMain>
   );
 }
