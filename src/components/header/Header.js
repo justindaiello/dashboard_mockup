@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyledHeader, StyledNav } from './HeaderStyles';
+import Dropdown from '../dropdown/Dropdown';
 import { MdNotificationsNone } from 'react-icons/md';
 
 function Header() {
@@ -8,7 +9,9 @@ function Header() {
       <div className="header-container">
         <h1 className="heading">Settings</h1>
         <StyledNav>
-          <li>dropdown will go here</li>
+          <li>
+            <Dropdown />
+          </li>
           <li>
             <div className="icon-container">
               <MdNotificationsNone className="notifications-icon" />
