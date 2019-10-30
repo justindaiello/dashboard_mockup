@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyledDropdown } from './DropdownStyles';
+import { StyledDropdown, DropdownMenu, Pointer } from './DropdownStyles';
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 
 function Dropdown() {
@@ -11,14 +11,24 @@ function Dropdown() {
   }
 
   return (
-    <StyledDropdown onClick={toggleMenu}>
-      Placeholder
-      {menuActive ? (
-        <MdKeyboardArrowUp className="arrow" />
-      ) : (
-        <MdKeyboardArrowDown className="arrow" />
+    <>
+      <StyledDropdown onClick={toggleMenu}>
+        Placeholder
+        {menuActive ? (
+          <MdKeyboardArrowUp className="arrow" />
+        ) : (
+          <MdKeyboardArrowDown className="arrow" />
+        )}
+      </StyledDropdown>
+      {menuActive && (
+        <>
+          <Pointer />
+          <DropdownMenu>
+            <p>MENU!!!</p>
+          </DropdownMenu>
+        </>
       )}
-    </StyledDropdown>
+    </>
   );
 }
 
