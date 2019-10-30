@@ -1,10 +1,31 @@
 import React from 'react';
-import { StyledHeader } from './HeaderStyles';
+import { StyledHeader, StyledNav } from './HeaderStyles';
+import { MdNotificationsNone } from 'react-icons/md';
 
 function Header() {
   return (
     <StyledHeader>
-      <p>hi</p>
+      <div className="header-container">
+        <h1 className="heading">Settings</h1>
+        <StyledNav>
+          <li>dropdown will go here</li>
+          <li>
+            <div className="icon-container">
+              <MdNotificationsNone className="notifications-icon" />
+              <span className="notifications-badge" />
+            </div>
+          </li>
+          <li>
+            <div className="photo-container">
+              <img
+                src="/archer.jpg"
+                className="profile-photo"
+                alt="profile"
+              ></img>
+            </div>
+          </li>
+        </StyledNav>
+      </div>
     </StyledHeader>
   );
 }
