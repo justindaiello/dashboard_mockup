@@ -46,6 +46,10 @@ const StyledSection = styled.section`
       vertical-align: center;
     }
 
+    .color {
+      color: ${props => props.theme.darkBlue};
+    }
+
     .button-container {
       display: flex;
       flex-direction: column;
