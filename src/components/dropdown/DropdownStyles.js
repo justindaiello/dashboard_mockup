@@ -14,6 +14,13 @@ const StyledDropdown = styled.button`
   font-family: 'Poppins', sans-serif;
   margin-bottom: 1rem;
 
+  &:hover,
+  &:focus {
+    border: 1.5px solid ${props => props.theme.darkBlue};
+    transition: all 0.5s ease-in-out;
+    outline: none;
+  }
+
   .arrow {
     font-size: 2rem;
   }
@@ -107,7 +114,7 @@ const StyledContainer = styled.div`
   opacity: 0;
   overflow-y: hidden;
   max-height: 150px;
-  transition: all 0.5s ease, z-index 0.5s;
+  transition: all 0.1s ease, z-index 0.5s;
   ${props => props.showMenu === 'show' && `opacity: 1`}
 `;
 

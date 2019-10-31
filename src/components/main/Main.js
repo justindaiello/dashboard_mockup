@@ -36,6 +36,7 @@ function Main() {
 
 export default Main;
 
+//seed data for 3 of the 4 Paper components in the grid.
 const data = [
   {
     heading: 'Account Settings',

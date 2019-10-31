@@ -8,11 +8,12 @@ function Paper(props) {
   const [topActive, setTopActive] = useState(false);
   const [bottomActive, setBottomActive] = useState(false);
 
-  //toggle subheader colors for buttons
+  //toggle top subheader colors from the switch component
   function toggleTop() {
     setTopActive(!topActive);
   }
 
+  //toggle bottom subheader color from the switch component
   function toggleBottom() {
     setBottomActive(!bottomActive);
   }

@@ -49,6 +49,12 @@ const StyledButton = styled.button`
   transform-origin: center;
   ${props => (props.rotate === 'spin' ? `transform: rotate(180deg)` : '')};
 
+  &:hover,
+  &:focus {
+    outline: none;
+    font-size: 2.2rem;
+  }
+
   svg {
     margin-top: 0.5rem;
   }

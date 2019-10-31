@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { StyledNav, StyledHeader, StyledLink, StyledButton } from './NavStyles';
 import { MdKeyboardArrowRight, MdNotificationsNone } from 'react-icons/md';
 import {
@@ -12,24 +12,10 @@ import {
 function Nav() {
   const [menuActive, setMenuActive] = useState(true);
 
+  //toggle sidebar open and closed
   function toggleMenu() {
     setMenuActive(!menuActive);
   }
-
-  // //open and close the sidebar nav depending on window width
-  // useEffect(() => {
-  //   window.addEventListener(
-  //     'resize',
-  //     () => {
-  //       if (window.innerWidth < 1000) {
-  //         setMenuActive(false);
-  //       } else {
-  //         setMenuActive(true);
-  //       }
-  //     },
-  //     false,
-  //   );
-  // });
 
   return (
     <StyledNav open={menuActive} id="navigation-bar">

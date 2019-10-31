@@ -13,6 +13,12 @@ const StyledMenuButton = styled.button`
   cursor: pointer;
   position: relative;
 
+  &:hover,
+  &:focus {
+    border: 0.5px solid ${props => props.theme.darkBlue};
+    border-radius: 5px;
+  }
+
   .arrow {
     font-size: 2rem;
     color: rgb(152, 153, 154);
@@ -60,6 +66,39 @@ const DropdownMenuItem = styled.li`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  p {
+    margin: 0;
+    cursor: pointer;
+    &:before {
+      content: '';
+      width: 2px;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+    }
+    &:after {
+      height: 2px;
+      background: ${props => props.theme.darkBlue};
+      content: '';
+      width: 0;
+      position: absolute;
+      transform: translateX(-50%);
+      transition: width 0.4s;
+      transition-timing-function: cubic-bezier(1, -0.65, 0, 2.31);
+      left: 50%;
+      margin-top: 2rem;
+    }
+    &:hover,
+    &:focus {
+      outline: none;
+      &:after {
+        width: calc(100% - 50px);
+      }
+    }
+  }
 `;
 
 const Pointer = styled.div`

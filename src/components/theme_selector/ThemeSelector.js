@@ -38,6 +38,7 @@ function ThemeSelector() {
 
 export default ThemeSelector;
 
+//seed data to display the different theme options. prop gets passed into the css to display the correct colors
 const data = [
   { name: 'The Purps', prop: 'purps' },
   { name: 'Tatooine', prop: 'tatooine' },

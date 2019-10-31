@@ -15,10 +15,12 @@ function Menu(props) {
     selection: props.items[0],
   });
 
+  //handler to toggle the menu open and closed
   function toggleMenu() {
     setMenuActive(!menuActive);
   }
 
+  //handler to set the currently selected item
   function handleSelect(e) {
     setDropSelect({ selection: e.target.id });
   }
@@ -41,7 +43,7 @@ function Menu(props) {
                 id={item}
                 onClick={e => handleSelect(e)}
               >
-                {item}
+                <p>{item}</p>
               </DropdownMenuItem>
             ))}
           </ul>

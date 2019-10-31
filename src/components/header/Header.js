@@ -3,6 +3,7 @@ import { StyledHeader, StyledNav } from './HeaderStyles';
 import Dropdown from '../dropdown/Dropdown';
 import { MdNotificationsNone, MdHistory, MdAttachMoney } from 'react-icons/md';
 
+//seed data for the drop down menu content
 const menuItems = [
   { title: 'Transaction History', icon: <MdHistory /> },
   { title: 'Current Balance', icon: <MdAttachMoney /> },

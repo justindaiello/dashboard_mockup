@@ -10,9 +10,9 @@ import {
 import { MdKeyboardArrowDown } from 'react-icons/md';
 
 function Dropdown(props) {
-  const [menuActive, setMenuActive] = useState(false); // open and close state for dropdown menu
+  const [menuActive, setMenuActive] = useState(false);
 
-  // click handler to toggle the menu open
+  // click handler to toggle the menu open and closed
   function toggleMenu() {
     setMenuActive(!menuActive);
   }
