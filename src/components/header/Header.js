@@ -17,13 +17,13 @@ function Header() {
           <li>
             <Dropdown title="Manage Assets" menuItems={menuItems} />
           </li>
-          <li>
+          <li className="icons">
             <div className="icon-container">
               <MdNotificationsNone className="notifications-icon" />
               <span className="notifications-badge" />
             </div>
           </li>
-          <li>
+          <li className="icons">
             <div className="photo-container">
               <img
                 src="/archer.jpg"

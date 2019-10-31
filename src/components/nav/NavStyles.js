@@ -15,6 +15,9 @@ const StyledNav = styled.nav`
     ${props => (props.open ? `padding-left: 30px` : `padding-left: 15px`)};
     list-style-type: none;
     transition: all 0.5s;
+    @media (max-width: 1000px) {
+      padding-left: 15px;
+    }
   }
 
   li {
@@ -22,6 +25,15 @@ const StyledNav = styled.nav`
     :last-child {
       margin-bottom: 10rem;
     }
+  }
+
+  @media (min-width: 1001px) {
+    .notifications-icon {
+      display: none;
+    }
+  }
+  @media (max-width: 1000px) {
+    width: 50px;
   }
 `;
 
@@ -40,6 +52,9 @@ const StyledButton = styled.button`
   svg {
     margin-top: 0.5rem;
   }
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `;
 
 const StyledHeader = styled.div`
@@ -55,6 +70,9 @@ const StyledHeader = styled.div`
     text-align: center;
     font-weight: 400;
     margin: 0;
+    @media (max-width: 1000px) {
+      display: none;
+    }
   }
 `;
 

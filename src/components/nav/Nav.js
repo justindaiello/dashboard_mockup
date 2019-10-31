@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StyledNav, StyledHeader, StyledLink, StyledButton } from './NavStyles';
-import { MdKeyboardArrowRight } from 'react-icons/md';
+import { MdKeyboardArrowRight, MdNotificationsNone } from 'react-icons/md';
 import {
   FaLandmark,
   FaReceipt,
@@ -16,20 +16,20 @@ function Nav() {
     setMenuActive(!menuActive);
   }
 
-  //open and close the sidebar nav depending on window width
-  useEffect(() => {
-    window.addEventListener(
-      'resize',
-      () => {
-        if (window.innerWidth < 1000) {
-          setMenuActive(false);
-        } else {
-          setMenuActive(true);
-        }
-      },
-      false,
-    );
-  });
+  // //open and close the sidebar nav depending on window width
+  // useEffect(() => {
+  //   window.addEventListener(
+  //     'resize',
+  //     () => {
+  //       if (window.innerWidth < 1000) {
+  //         setMenuActive(false);
+  //       } else {
+  //         setMenuActive(true);
+  //       }
+  //     },
+  //     false,
+  //   );
+  // });
 
   return (
     <StyledNav open={menuActive} id="navigation-bar">
@@ -78,6 +78,14 @@ function Nav() {
           <StyledLink href="/" rel="noopener">
             <span>
               <FaStore />
+            </span>
+            {menuActive && 'Marketplace'}
+          </StyledLink>
+        </li>
+        <li className="notifications-icon">
+          <StyledLink href="/" rel="noopener">
+            <span>
+              <MdNotificationsNone />
             </span>
             {menuActive && 'Marketplace'}
           </StyledLink>

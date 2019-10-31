@@ -7,6 +7,9 @@ const StyledHeader = styled.header`
     display: grid;
     grid-template-columns: auto 1fr;
     height: 50px;
+    @media (max-width: 490px) {
+      display: flex;
+    }
   }
 
   .heading {
@@ -22,6 +25,12 @@ const StyledNav = styled.ul`
   justify-self: flex-end;
   align-items: flex-start;
   justify-content: space-between;
+
+  .icons {
+    @media (max-width: 700px) {
+      display: none;
+    }
+  }
 
   li {
     list-style-type: none;

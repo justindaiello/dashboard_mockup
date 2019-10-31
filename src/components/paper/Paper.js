@@ -8,6 +8,7 @@ function Paper(props) {
   const [topActive, setTopActive] = useState(false);
   const [bottomActive, setBottomActive] = useState(false);
 
+  //toggle subheader colors for buttons
   function toggleTop() {
     setTopActive(!topActive);
   }
