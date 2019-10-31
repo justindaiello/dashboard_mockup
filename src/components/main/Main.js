@@ -3,6 +3,7 @@ import { StyledMain, StyledSection } from './MainStyles';
 import Header from '../header/Header';
 import Breadcrumbs from '../breadcrumbs/Breadcrumbs';
 import Paper from '../paper/Paper';
+import ThemeSelector from '../theme_selector/ThemeSelector';
 
 function Main() {
   return (
@@ -27,6 +28,7 @@ function Main() {
             bottomMenuItems={item.bottomMenuItems}
           />
         ))}
+        <ThemeSelector />
       </StyledSection>
     </StyledMain>
   );
