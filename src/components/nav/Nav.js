@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { StyledNav, StyledHeader, StyledLink } from './NavStyles';
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
+import { StyledNav, StyledHeader, StyledLink, StyledButton } from './NavStyles';
+import { MdKeyboardArrowRight } from 'react-icons/md';
 import {
   FaLandmark,
   FaReceipt,
@@ -35,9 +35,9 @@ function Nav() {
     <StyledNav open={menuActive} id="navigation-bar">
       <StyledHeader>
         {menuActive && <h1 className="nav-heading">Linus</h1>}
-        <button className="toggler" onClick={toggleMenu}>
-          {menuActive ? <MdKeyboardArrowLeft /> : <MdKeyboardArrowRight />}
-        </button>
+        <StyledButton rotate={menuActive ? 'spin' : ''} onClick={toggleMenu}>
+          <MdKeyboardArrowRight />
+        </StyledButton>
       </StyledHeader>
       <ul className="navigation" aria-labelledby="navigation-bar">
         <li>

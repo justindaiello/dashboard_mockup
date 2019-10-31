@@ -25,7 +25,7 @@ function ThemeSelector() {
           </div>
         ))}
         <div>
-          <StyledItem code="suggest"></StyledItem>
+          <StyledItem className="suggest"></StyledItem>
           <p className="theme-title">Suggest One!</p>
         </div>
       </StyledGrid>

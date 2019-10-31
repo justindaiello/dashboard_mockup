@@ -13,12 +13,19 @@ const StyledDropdown = styled.button`
   justify-content: center;
   font-family: 'Poppins', sans-serif;
   margin-bottom: 1rem;
-  transition: all 0.5s;
 
   .arrow {
     font-size: 2rem;
-    margin-left: 1rem;
   }
+`;
+
+const StyledArrowContainer = styled.div`
+  margin-left: 1rem;
+  display: flex;
+  transform: rotate(0deg);
+  transition: all 0.3s ease-out;
+  transform-origin: center;
+  ${props => (props.rotate === 'spin' ? `transform: rotate(180deg)` : '')};
 `;
 
 const Pointer = styled.div`
@@ -31,7 +38,7 @@ const Pointer = styled.div`
 `;
 
 const DropdownMenu = styled.div`
-  z-index: 10;
+  z-index: 1;
   transform-origin: 0 0;
   border: 1px solid ${props => props.theme.darkBlue};
   overflow: hidden;
@@ -95,4 +102,20 @@ const DropdownMenuItem = styled.li`
   }
 `;
 
-export { StyledDropdown, Pointer, DropdownMenu, DropdownMenuItem };
+const StyledContainer = styled.div`
+  z-index: 1;
+  opacity: 0;
+  overflow-y: hidden;
+  max-height: 150px;
+  transition: all 0.5s ease, z-index 0.5s;
+  ${props => props.showMenu === 'show' && `opacity: 1`}
+`;
+
+export {
+  StyledDropdown,
+  Pointer,
+  DropdownMenu,
+  DropdownMenuItem,
+  StyledContainer,
+  StyledArrowContainer,
+};

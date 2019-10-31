@@ -48,33 +48,33 @@ const StyledItem = styled.button`
   height: 50px;
   width: 90px;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.3);
-  ${props => props.code == 'purps' && `background-color: rgb(52, 47, 61)`}
-  ${props => props.code == 'tatooine' && `background-color: rgb(228, 215, 189)`}
-  ${props => props.code == 'endor' && `background-color: rgb(84, 114, 114)`}
-  ${props => props.code == 'biz' && `background-color: rgb(48, 64, 88)`}
-  ${props => props.code == 'grape' && `background-color: rgb(61, 57, 97)`}
-  ${props => props.code == 'blue' && `background-color: rgb(67, 111, 203)`}
+  ${props => props.code === 'purps' && `background-color: rgb(52, 47, 61)`};
   ${props =>
-    props == 'winter' &&
-    `background-color: rgb(254, 255, 255); border: 1px solid rgb(195, 196, 197)`}
-  ${props => props == 'suggest' && `background-color: rgb(195, 196, 197)`};
+    props.code === 'tatooine' && `background-color: rgb(228, 215, 189)`};
+  ${props => props.code === 'endor' && `background-color: rgb(84, 114, 114)`};
+  ${props => props.code === 'biz' && `background-color: rgb(48, 64, 88)`};
+  ${props => props.code === 'grape' && `background-color: rgb(61, 57, 97)`};
+  ${props => props.code === 'blue' && `background-color: rgb(67, 111, 203)`};
+  ${props =>
+    props === 'winter' &&
+    `background-color: rgb(254, 255, 255); border: 1px solid rgb(195, 196, 197)`};
 
   .theme-list {
     color: white;
     padding-left: 1.5rem;
-    ${props => props.code == 'winter' && `color: rgb(0, 0, 0)`};
+    ${props => props.code === 'winter' && `color: rgb(0, 0, 0)`};
     @media (max-width: 700px) {
-    display: none;
-  }
+      display: none;
+    }
   }
 
   .filler-line-1 {
     position: absolute;
     ${props =>
-      props.code == 'purps' ||
-      props.code == 'tatooine' ||
-      props.code == 'endor' ||
-      props.code == 'biz'
+      props.code === 'purps' ||
+      props.code === 'tatooine' ||
+      props.code === 'endor' ||
+      props.code === 'biz'
         ? `top: 82px`
         : `top: 185px`}
     border-radius: 2px;
@@ -82,7 +82,7 @@ const StyledItem = styled.button`
     margin: 0;
     width: 50px;
     ${props =>
-      props.code == 'winter'
+      props.code === 'winter'
         ? `background-color: rgb(0,0,0)`
         : `background-color: white`};
   }
@@ -90,10 +90,10 @@ const StyledItem = styled.button`
   .filler-line-2 {
     position: absolute;
     ${props =>
-      props.code == 'purps' ||
-      props.code == 'tatooine' ||
-      props.code == 'endor' ||
-      props.code == 'biz'
+      props.code === 'purps' ||
+      props.code === 'tatooine' ||
+      props.code === 'endor' ||
+      props.code === 'biz'
         ? `top: 95px`
         : `top: 198px`}
     border-radius: 2px;
@@ -101,7 +101,7 @@ const StyledItem = styled.button`
     margin: 0;
     width: 50px;
     ${props =>
-      props.code == 'winter'
+      props.code === 'winter'
         ? `background-color: rgb(0,0,0)`
         : `background-color: white`}
   }
@@ -110,22 +110,21 @@ const StyledItem = styled.button`
     position: absolute;
     top: 108px;
     ${props =>
-      props.code == 'purps' ||
-      props.code == 'tatooine' ||
-      props.code == 'endor' ||
-      props.code == 'biz'
+      props.code === 'purps' ||
+      props.code === 'tatooine' ||
+      props.code === 'endor' ||
+      props.code === 'biz'
         ? `top: 108px`
         : `top: 209px`}
     border-radius: 2px;
     height: 2px;
     margin: 0;
     width: 50px;
-   ${props =>
-     props.code == 'winter'
-       ? `background-color: rgb(0,0,0)`
-       : `background-color: white`}
+    ${props =>
+      props.code === 'winter'
+        ? `background-color: rgb(0,0,0)`
+        : `background-color: white`}
   }
-  
 `;
 
 export { StyledPaper, StyledGrid, StyledItem };

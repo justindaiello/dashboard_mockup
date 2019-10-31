@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
-import { StyledMenuButton, DropdownMenuItem, DropdownMenu } from './MenuStyles';
-import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
+import {
+  StyledMenuButton,
+  DropdownMenuItem,
+  DropdownMenu,
+  StyledArrowContainer,
+  Pointer,
+  StyledContainer,
+} from './MenuStyles';
+import { MdKeyboardArrowDown } from 'react-icons/md';
 
 function Menu(props) {
   const [menuActive, setMenuActive] = useState(false);
@@ -20,13 +27,12 @@ function Menu(props) {
     <>
       <StyledMenuButton onClick={toggleMenu}>
         {dropSelect.selection}
-        {!menuActive ? (
+        <StyledArrowContainer rotate={menuActive ? 'spin' : ''}>
           <MdKeyboardArrowDown className="arrow" />
-        ) : (
-          <MdKeyboardArrowUp className="arrow" />
-        )}
+        </StyledArrowContainer>
       </StyledMenuButton>
-      {menuActive && (
+      <StyledContainer showMenu={menuActive ? 'show' : ''}>
+        <Pointer />
         <DropdownMenu bottom={props.bottom}>
           <ul className="menu-list">
             {props.items.map(item => (
@@ -40,7 +46,7 @@ function Menu(props) {
             ))}
           </ul>
         </DropdownMenu>
-      )}
+      </StyledContainer>
     </>
   );
 }

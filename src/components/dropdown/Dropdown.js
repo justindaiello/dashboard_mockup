@@ -4,8 +4,10 @@ import {
   DropdownMenu,
   Pointer,
   DropdownMenuItem,
+  StyledContainer,
+  StyledArrowContainer,
 } from './DropdownStyles';
-import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
+import { MdKeyboardArrowDown } from 'react-icons/md';
 
 function Dropdown(props) {
   const [menuActive, setMenuActive] = useState(false); // open and close state for dropdown menu
@@ -19,29 +21,25 @@ function Dropdown(props) {
     <>
       <StyledDropdown onClick={toggleMenu}>
         {props.title}
-        {menuActive ? (
-          <MdKeyboardArrowUp className="arrow" />
-        ) : (
+        <StyledArrowContainer rotate={menuActive ? 'spin' : ''}>
           <MdKeyboardArrowDown className="arrow" />
-        )}
+        </StyledArrowContainer>
       </StyledDropdown>
-      {menuActive && (
-        <>
-          <Pointer />
-          <DropdownMenu>
-            <ul className="menu-list">
-              {props.menuItems.map(item => (
-                <DropdownMenuItem key={item.title}>
-                  <a href="#" rel="noopener" className="menu-link">
-                    {item.title}
-                    <span className="menu-icon">{item.icon}</span>
-                  </a>
-                </DropdownMenuItem>
-              ))}
-            </ul>
-          </DropdownMenu>
-        </>
-      )}
+      <StyledContainer showMenu={menuActive ? 'show' : ''}>
+        <Pointer />
+        <DropdownMenu>
+          <ul className="menu-list">
+            {props.menuItems.map(item => (
+              <DropdownMenuItem key={item.title}>
+                <a href="/" rel="noopener" className="menu-link">
+                  {item.title}
+                  <span className="menu-icon">{item.icon}</span>
+                </a>
+              </DropdownMenuItem>
+            ))}
+          </ul>
+        </DropdownMenu>
+      </StyledContainer>
     </>
   );
 }

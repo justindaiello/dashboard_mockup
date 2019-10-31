@@ -25,6 +25,23 @@ const StyledNav = styled.nav`
   }
 `;
 
+const StyledButton = styled.button`
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: ${props => props.theme.white};
+  font-size: 2rem;
+  padding-left: 0.5rem;
+  transform: rotate(0deg);
+  transition: all 0.3s ease-out;
+  transform-origin: center;
+  ${props => (props.rotate === 'spin' ? `transform: rotate(180deg)` : '')};
+
+  svg {
+    margin-top: 0.5rem;
+  }
+`;
+
 const StyledHeader = styled.div`
   display: flex;
   justify-content: center;
@@ -38,19 +55,6 @@ const StyledHeader = styled.div`
     text-align: center;
     font-weight: 400;
     margin: 0;
-  }
-
-  .toggler {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    color: ${props => props.theme.white};
-    font-size: 2rem;
-    padding-left: 0.5rem;
-    }
-    svg {
-      margin-top: 0.9rem;
-    }
   }
 `;
 
@@ -95,4 +99,4 @@ const StyledLink = styled.a`
   }
 `;
 
-export { StyledNav, StyledLink, StyledHeader };
+export { StyledNav, StyledLink, StyledHeader, StyledButton };
