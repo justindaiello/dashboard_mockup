@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyledPaper, StyledGrid, StyledItem } from './ThemeSelectorStyles';
+import { MdAdd } from 'react-icons/md';
 
 function ThemeSelector() {
   return (
@@ -25,7 +26,9 @@ function ThemeSelector() {
           </div>
         ))}
         <div>
-          <StyledItem className="suggest"></StyledItem>
+          <button className="suggest">
+            <MdAdd className="plus-icon" />
+          </button>
           <p className="theme-title">Suggest One!</p>
         </div>
       </StyledGrid>

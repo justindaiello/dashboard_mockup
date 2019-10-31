@@ -19,6 +19,20 @@ const StyledPaper = styled.div`
     font-size: 1.5rem;
     color: rgb(152, 153, 154);
   }
+
+  .suggest {
+    background-color: rgb(195, 196, 197);
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    height: 50px;
+    width: 90px;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.3);
+    font-size: 3rem;
+  }
 `;
 
 const StyledGrid = styled.div`
